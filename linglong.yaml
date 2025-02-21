@@ -13,12 +13,9 @@ command:
 
 base: org.deepin.base/23.1.0
 
-sources:
-  - kind: file
-    url: https://minio.cicd.getdeepin.org/share/firefox-136.0b3.tar.xz
-    digest: 5d2d1243a5b7f54430279493f0b75cddf4206fc703d9fff5e440b7f29ffec50c
 
 build: |
+  bash ./install_dep linglong/sources $PREFIX
   SOURCES="linglong/sources"
   # 解压
   tar -xvf $SOURCES/firefox-136.0b3.tar.xz -C $SOURCES
@@ -31,3 +28,34 @@ build: |
   cp $PREFIX/browser/chrome/icons/default/default64.png $PREFIX/share/icons/locolor/64x64/apps/firefox-nal.png
   # 放置desktop
   cp org.mozilla.firefox-nal.linyaps.desktop $PREFIX/share/applications/org.mozilla.firefox-nal.linyaps.desktop
+
+sources:
+  - kind: file
+    url: https://minio.cicd.getdeepin.org/share/firefox-136.0b3.tar.xz
+    digest: 5d2d1243a5b7f54430279493f0b75cddf4206fc703d9fff5e440b7f29ffec50c
+  # linglong:gen_deb_source sources amd64 https://pools.uniontech.com/deepin-beige beige main community
+  # linglong:gen_deb_source install libpci3
+  - kind: file
+    url: https://pools.uniontech.com/deepin-beige/pool/main/g/gcc-13/gcc-13-base_13.2.0-3deepin3_amd64.deb
+    digest: d9c679af2dd0d3878d823075b2fb1433618bd3227cbae336e11d8e89274b5ab1
+  - kind: file
+    url: https://pools.uniontech.com/deepin-beige/pool/main/g/glibc/libc6_2.38-6deepin7_amd64.deb
+    digest: d8928f5bfe6dfaa9b64ea2354c9d933c51805aa137e52d834efdd4a1b220f031
+  - kind: file
+    url: https://pools.uniontech.com/deepin-beige/pool/main/libc/libcap2/libcap2_2.66-5_amd64.deb
+    digest: f4f581c5ed9c6576ff284117ee51ae8b4e47e6799d71fabc7c0aa2d3a260752a
+  - kind: file
+    url: https://pools.uniontech.com/deepin-beige/pool/main/g/gcc-13/libgcc-s1_13.2.0-3deepin3_amd64.deb
+    digest: bfe5009a5995e8e9d8206188394c5422b9c7fbbbea954bc632abab9e6699f35c
+  - kind: file
+    url: https://pools.uniontech.com/deepin-beige/pool/main/p/pciutils/libpci3_3.10.0-2_amd64.deb
+    digest: 6dca73d98199375592e8ce0e136bb922d7fa21ec43d1f750fc260b2503a1c59d
+  - kind: file
+    url: https://pools.uniontech.com/deepin-beige/pool/main/s/systemd/libudev1_255.2-4deepin3_amd64.deb
+    digest: 540b14570f244649ac7cc75094b0bb9ad8a16287747bc53b53cb85cf4404aedd
+  - kind: file
+    url: https://pools.uniontech.com/deepin-beige/pool/main/p/pci.ids/pci.ids_0.0~2024.11.26-0deepin1_all.deb
+    digest: a48e52aa8a68ff8233c6b114841baae9bf1fd633123719da64ff38160241918a
+  - kind: file
+    url: https://pools.uniontech.com/deepin-beige/pool/main/z/zlib/zlib1g_1.3.dfsg+really1.3.1-1deepin1_amd64.deb
+    digest: d0bab03ed3981fbe2bae8799a3c45d9a3b1561ae3d7bcffe37f235d573ae24c6

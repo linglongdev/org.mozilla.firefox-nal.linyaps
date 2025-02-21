@@ -1,7 +1,7 @@
 [Desktop Entry]
 Categories=Network;
 Encoding=UTF-8
-Exec=/opt/apps/org.mozilla.firefox-nal/files/firefox %U
+Exec=/opt/apps/org.mozilla.firefox-nal.linyaps/files/firefox %U
 Icon=firefox-nal
 Name=Firefox (Mozilla)
 Name[zh_CN]=火狐浏览器(Mozilla)
