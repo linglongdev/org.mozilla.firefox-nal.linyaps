@@ -3,7 +3,7 @@ version: "1"
 package:
   id: org.mozilla.firefox-nal.linyaps
   name: firefox-nal
-  version: 136.0.1.0
+  version: 137.0.1.0
   kind: app
   description: |
     火狐浏览器国际版，快速、可靠、私密——让您安心上网。
@@ -19,7 +19,7 @@ build: |
   bash ./install_dep linglong/sources $PREFIX
   SOURCES="linglong/sources"
   # 解压
-  tar -xvf $SOURCES/firefox-136.0.zh.tar.xz -C $SOURCES
+  tar -xvf $SOURCES/firefox-137.0.1.tar.xz -C $SOURCES
   # 移动
   cp -r $SOURCES/firefox/* $PREFIX
   install -D $PREFIX/browser/chrome/icons/default/default16.png $PREFIX/share/icons/hicolor/16x16/apps/firefox-nal.png
@@ -37,8 +37,8 @@ build: |
 
 sources:
   - kind: file
-    url: https://minio.cicd.getdeepin.org/share/firefox-136.0.zh.tar.xz
-    digest: 34802a495305869f8899b645ef23e93a2ec834c6ef6ac4d7d8ca008d4cd628e9
+    url: https://share.cicd.getdeepin.org/firefox-137.0.1.tar.xz
+    digest: 49e42781e6b9ecef1be6f8d8f5386c6c9a6dcbba25c9bc5486d90df4efd8b3bd
   # linglong:gen_deb_source sources amd64 https://pools.uniontech.com/deepin-beige beige main community
   # linglong:gen_deb_source install libpci3, libcanberra-gtk-module
   - kind: file
